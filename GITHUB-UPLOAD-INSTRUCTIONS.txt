@@ -1,0 +1,27 @@
+FULL PROJECT — 100-FILE GITHUB BATCHES
+
+This version contains every regular project file plus the three node_modules
+command links converted into uploadable files. Original relative paths are
+preserved inside each numbered batch.
+
+UPLOAD ORDER
+1. Use an empty GitHub repository.
+2. Open BATCH-001-OPEN-AND-UPLOAD-CONTENTS.
+3. Select everything INSIDE the batch folder and drag it into GitHub's
+   Add file > Upload files area.
+4. Commit the upload.
+5. Repeat the same process for BATCH-002, BATCH-003, and every following batch
+   in numerical order.
+
+IMPORTANT
+- Never upload a BATCH folder itself. Upload only its contents.
+- Do not flatten or rename the nested folders.
+- The GitHub pending-file list should show paths such as src/components/...,
+  public/images/..., and node_modules/... .
+- Each numbered batch contains no more than 100 files.
+- All batches must be uploaded to the same repository root.
+
+This full version includes node_modules, dist, screenshots, and design-review
+files because the complete current working folder was explicitly requested.
+For normal GitHub/Vercel projects, node_modules and dist are generated from
+package.json and are usually excluded.
