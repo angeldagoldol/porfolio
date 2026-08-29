@@ -1,0 +1,216 @@
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes portrait-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes orbit-breathe {
+  0%,
+  100% {
+    opacity: 0.62;
+    scale: 0.98;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1.03;
+  }
+}
+
+@keyframes editor-cursor {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.hero-header-copy > * {
+  animation: hero-reveal 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-header-copy > :nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.hero-header-copy > :nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.hero-member {
+  animation: hero-reveal 880ms 140ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-member:nth-child(2) {
+  animation-delay: 230ms;
+}
+
+.hero-member:nth-child(3) {
+  animation-delay: 320ms;
+}
+
+.member-portrait--hero {
+  animation: portrait-float 6s ease-in-out infinite;
+}
+
+.hero-member:nth-child(2) .member-portrait--hero {
+  animation-delay: -2s;
+}
+
+.hero-member:nth-child(3) .member-portrait--hero {
+  animation-delay: -4s;
+}
+
+.member-orbit {
+  animation: orbit-breathe 5.6s ease-in-out infinite;
+}
+
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(42px) scale(0.988);
+  transition:
+    opacity 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.code-editor-body li:last-child.is-typed code::after {
+  display: inline-block;
+  width: 7px;
+  height: 1.08em;
+  margin-left: 5px;
+  background: var(--cyan);
+  content: "";
+  vertical-align: -0.18em;
+  animation: editor-cursor 900ms steps(1, end) infinite;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-member {
+    transition: background-color 280ms ease;
+  }
+
+  .hero-member:hover {
+    background: rgba(15, 20, 53, 0.22);
+  }
+
+  .hero-member:hover .member-portrait--hero {
+    animation-play-state: paused;
+    transform: translateY(-5px) scale(1.025);
+  }
+
+  .hero-member:hover .member-orbit {
+    border-color: rgba(122, 221, 255, 0.38);
+  }
+
+  .member-profile,
+  .team-skill-group,
+  .member-work,
+  .contact-member,
+  .achievement-group {
+    transition:
+      border-color 220ms ease,
+      transform 220ms ease,
+      background-color 220ms ease;
+  }
+
+  .team-skill-group:hover,
+  .member-work:hover,
+  .contact-member:hover,
+  .achievement-group:hover {
+    border-color: rgba(142, 183, 255, 0.36);
+    background: rgba(12, 19, 48, 0.88);
+    transform: translateY(-3px);
+  }
+
+  .button-primary {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .button-primary:hover {
+    box-shadow: 0 20px 54px rgba(106, 76, 255, 0.34);
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .motion-canvas,
+  .cursor-glow,
+  .scroll-progress-track {
+    display: none;
+  }
+
+  .davao-environment,
+  .hero-member,
+  .hero-header-copy > *,
+  .member-portrait--hero,
+  .member-orbit {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .experience-track {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none !important;
+  }
+
+  .experience-track > span:nth-child(n + 6) {
+    display: none;
+  }
+
+  .reveal-ready [data-reveal],
+  .reveal-ready [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}

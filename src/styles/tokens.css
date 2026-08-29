@@ -1,0 +1,33 @@
+:root {
+  color-scheme: dark;
+  --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --page: #02050f;
+  --page-soft: #060a1c;
+  --surface: rgba(8, 13, 34, 0.78);
+  --surface-strong: rgba(11, 17, 43, 0.94);
+  --surface-muted: rgba(17, 24, 57, 0.68);
+  --text: #f7f8ff;
+  --text-soft: #bec6e4;
+  --text-muted: #8994bb;
+  --line: rgba(185, 199, 255, 0.15);
+  --line-strong: rgba(190, 204, 255, 0.26);
+  --violet: #9366ff;
+  --violet-soft: #c49cff;
+  --cyan: #58ddff;
+  --blue: #6581ff;
+  --magenta: #cf6cff;
+  --focus: #86e9ff;
+  --header-height: 92px;
+  --container: 1320px;
+  --radius-xl: 36px;
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --shadow-large: 0 36px 100px rgba(0, 0, 0, 0.34);
+  --davao-background: url("/images/davao-nebula-night-2048.webp");
+  --pointer-x: 50vw;
+  --pointer-y: 30vh;
+  --page-progress: 0;
+  --parallax-x: 0;
+  --parallax-y: 0;
+}

@@ -1,0 +1,743 @@
+@media (max-width: 1280px) {
+  :root {
+    --davao-background: url("/images/davao-nebula-night-1280.webp");
+    --container: 1160px;
+  }
+
+  .site-container {
+    width: min(calc(100% - 60px), var(--container));
+  }
+
+  .hero-member {
+    padding-inline: 26px;
+  }
+
+  .member-profile-lead {
+    grid-template-columns: minmax(220px, 0.62fr) minmax(330px, 1fr) minmax(240px, 0.7fr);
+  }
+}
+
+@media (min-width: 1200px) and (max-height: 980px) {
+  .hero-section {
+    padding-top: calc(var(--header-height) + 12px);
+    padding-bottom: 28px;
+  }
+
+  .hero-header-copy h1 {
+    margin-top: 10px;
+    font-size: clamp(3.2rem, 4.8vw, 4.65rem);
+  }
+
+  .hero-header-copy > p:last-child {
+    margin-top: 12px;
+  }
+
+  .hero-members {
+    min-height: 525px;
+    margin-top: 2px;
+  }
+
+  .hero-member {
+    grid-template-rows: auto minmax(300px, 1fr) auto;
+    padding-top: 14px;
+    padding-bottom: 18px;
+  }
+
+  .hero-member-visual {
+    min-height: 320px;
+  }
+
+  .member-portrait--hero {
+    width: min(72%, 330px);
+  }
+
+  .hero-member-copy p {
+    margin-top: 6px;
+  }
+
+  .hero-member-copy a {
+    margin-top: 12px;
+  }
+
+  .team-signal {
+    top: 82px;
+    height: 330px;
+  }
+
+  .hero-collaboration {
+    min-height: 52px;
+    margin-top: 0;
+    padding-block: 9px;
+  }
+
+  .hero-location {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .hero-section {
+    padding-bottom: 52px;
+  }
+
+  .hero-members {
+    display: flex;
+    min-height: 620px;
+    gap: 14px;
+    padding: 12px 8vw 20px;
+    overflow-x: auto;
+    scroll-padding-inline: 8vw;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .hero-members::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-member {
+    min-height: 590px;
+    flex: 0 0 min(72vw, 610px);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: rgba(6, 10, 29, 0.43);
+    scroll-snap-align: center;
+  }
+
+  .hero-member:first-child {
+    border-left: 1px solid var(--line);
+  }
+
+  .team-signal {
+    display: none;
+  }
+
+  .member-portrait--hero {
+    width: min(72%, 360px);
+  }
+
+  .hero-collaboration {
+    margin-top: 8px;
+  }
+
+  .member-profile-lead {
+    grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+  }
+
+  .member-facts {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .member-facts div {
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+
+  .member-facts div:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .member-facts div:first-child,
+  .member-facts div:nth-child(2) {
+    border-top: 0;
+  }
+
+  .skill-chip-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-skill-groups,
+  .member-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-skill-group:last-child,
+  .member-work:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .shared-project {
+    grid-template-columns: minmax(0, 1fr) minmax(310px, 0.78fr);
+  }
+
+  .contact-stage {
+    grid-template-columns: minmax(270px, 0.65fr) minmax(0, 1.35fr);
+    gap: 34px;
+    padding: 34px;
+  }
+}
+
+@media (max-width: 980px) {
+  :root {
+    --header-height: 76px;
+  }
+
+  .site-container {
+    width: min(calc(100% - 44px), 900px);
+  }
+
+  .site-header,
+  .site-header.is-scrolled,
+  .site-header.menu-is-open {
+    height: var(--header-height);
+  }
+
+  .header-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .header-contact {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: grid;
+    position: relative;
+    z-index: 6;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    background: rgba(9, 14, 37, 0.78);
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .main-navigation {
+    position: fixed;
+    z-index: 5;
+    top: 82px;
+    right: 22px;
+    left: 22px;
+    max-height: calc(100svh - 104px);
+    padding: 16px;
+    overflow-y: auto;
+    border: 1px solid var(--line-strong);
+    border-radius: 22px;
+    background: rgba(4, 8, 25, 0.97);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.48);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-14px) scale(0.985);
+    transform-origin: top center;
+    transition: opacity 200ms ease, transform 200ms ease;
+    backdrop-filter: blur(24px);
+  }
+
+  .main-navigation.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .main-navigation ul {
+    display: grid;
+    gap: 4px;
+  }
+
+  .main-navigation a {
+    justify-content: space-between;
+    padding: 14px 15px;
+    border-radius: 13px;
+    font-size: 0.92rem;
+  }
+
+  .main-navigation a::after {
+    display: none;
+  }
+
+  .main-navigation a svg {
+    display: block;
+  }
+
+  .main-navigation a:hover,
+  .main-navigation a.is-active {
+    background: rgba(112, 121, 255, 0.11);
+  }
+
+  .mobile-contact-item {
+    display: block;
+    margin-top: 6px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    z-index: 4;
+    inset: var(--header-height) 0 0;
+    border: 0;
+    background: rgba(1, 3, 12, 0.66);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+  }
+
+  .menu-backdrop.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--header-height) + 34px);
+  }
+
+  .hero-header-copy h1 {
+    font-size: clamp(3.3rem, 8.8vw, 5rem);
+  }
+
+  .section-heading-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-heading-row > p {
+    max-width: 640px;
+  }
+
+  .member-profile {
+    padding: 26px;
+  }
+
+  .member-profile-lead {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .member-portrait--detail,
+  .member-portrait--detail picture,
+  .profile-introduction {
+    min-height: 390px;
+  }
+
+  .member-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-panel--skills,
+  .profile-panel--contact {
+    grid-column: auto;
+  }
+
+  .profile-contact-list {
+    grid-template-columns: 1fr;
+  }
+
+  .shared-project,
+  .growth-layout,
+  .contact-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual,
+  .project-content {
+    min-height: 440px;
+  }
+
+  .growth-scene {
+    position: relative;
+    top: 0;
+  }
+
+  .contact-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-member:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --davao-background: url("/images/davao-nebula-night-768.webp");
+  }
+}
+
+@media (max-width: 760px) {
+  .site-container {
+    width: min(calc(100% - 30px), 680px);
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
+  .brand-name {
+    font-size: 0.86rem;
+  }
+
+  .hero-header-copy {
+    text-align: left;
+  }
+
+  .hero-eyebrow {
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .hero-header-copy h1 {
+    font-size: clamp(3.2rem, 13.2vw, 4.65rem);
+  }
+
+  .hero-header-copy > p:last-child {
+    margin-inline: 0;
+  }
+
+  .hero-members {
+    display: grid;
+    min-height: 0;
+    gap: 16px;
+    padding: 30px 15px 10px;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .hero-member {
+    min-height: 600px;
+    padding: 22px 20px 26px;
+    border: 1px solid var(--line);
+    border-radius: 26px;
+  }
+
+  .hero-member-visual {
+    min-height: 390px;
+  }
+
+  .member-portrait--hero {
+    width: min(80%, 340px);
+  }
+
+  .hero-code-fragment {
+    left: 3%;
+  }
+
+  .hero-member-copy p {
+    min-height: 0;
+  }
+
+  .hero-collaboration {
+    width: min(calc(100% - 30px), 680px);
+    border-radius: 22px;
+    gap: 12px;
+    padding: 14px 18px;
+    font-size: 0.63rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-collaboration svg:nth-of-type(2) {
+    display: none;
+  }
+
+  .content-section,
+  .contact-section {
+    padding-block: 82px;
+  }
+
+  .section-heading {
+    margin-bottom: 34px;
+  }
+
+  .section-heading h2,
+  .contact-intro h2 {
+    font-size: clamp(2.65rem, 11.5vw, 4rem);
+  }
+
+  .member-profile {
+    padding: 16px;
+    border-radius: 26px;
+  }
+
+  .member-profile-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 8px 4px 22px;
+  }
+
+  .member-profile-header h3 {
+    font-size: clamp(2.1rem, 10vw, 3.3rem);
+  }
+
+  .member-profile-lead {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .member-portrait--detail,
+  .member-portrait--detail picture {
+    min-height: 390px;
+  }
+
+  .profile-introduction {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .member-facts {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .member-facts div,
+  .member-facts div:nth-child(odd) {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .member-facts div:first-child {
+    border-top: 0;
+  }
+
+  .member-facts div:nth-child(2) {
+    border-top: 1px solid var(--line);
+  }
+
+  .member-profile-grid {
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .profile-panel {
+    padding: 20px;
+  }
+
+  .skill-chip-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-list li {
+    flex-direction: column;
+  }
+
+  .team-skill-groups,
+  .member-work-grid,
+  .contact-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .team-skill-group:last-child,
+  .member-work:last-child,
+  .contact-member:last-child {
+    grid-column: auto;
+  }
+
+  .project-visual,
+  .project-content {
+    min-height: 0;
+  }
+
+  .project-visual {
+    padding: 8px;
+  }
+
+  .project-content {
+    padding: 30px 24px;
+  }
+
+  .code-editor-body {
+    min-height: 310px;
+    padding: 28px 16px 28px 48px;
+    overflow-x: auto;
+  }
+
+  .code-editor-body li {
+    min-width: 390px;
+    font-size: 0.68rem;
+  }
+
+  .growth-scene picture {
+    aspect-ratio: 1.05;
+  }
+
+  .contact-stage {
+    gap: 34px;
+    padding: 25px;
+    border-radius: 26px;
+  }
+
+  .footer-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-block: 26px;
+    text-align: center;
+  }
+
+  .footer-inner p {
+    flex-basis: 100%;
+    order: 3;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-container {
+    width: min(calc(100% - 22px), 480px);
+  }
+
+  .brand-name {
+    max-width: 195px;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--header-height) + 26px);
+  }
+
+  .hero-header-copy h1 {
+    font-size: clamp(2.9rem, 14vw, 3.9rem);
+  }
+
+  .hero-member {
+    min-height: 555px;
+  }
+
+  .hero-member-visual {
+    min-height: 340px;
+  }
+
+  .hero-member-copy a {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-collaboration svg {
+    display: none;
+  }
+
+  .member-portrait--detail,
+  .member-portrait--detail picture {
+    min-height: 330px;
+  }
+
+  .profile-introduction .profile-about {
+    font-size: 1.35rem;
+  }
+
+  .profile-contact-list a,
+  .contact-display-only {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .profile-contact-list a > svg:last-child,
+  .contact-display-only em {
+    grid-column: 2;
+  }
+
+  .team-skill-group,
+  .member-work,
+  .contact-member,
+  .achievement-group {
+    padding: 19px;
+  }
+
+  .team-skill-item {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .skill-owner {
+    display: none;
+  }
+
+  .project-content h3 {
+    font-size: 2.55rem;
+  }
+
+  .technology-list {
+    gap: 6px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .code-editor-titlebar {
+    grid-template-columns: auto 1fr;
+  }
+
+  .editor-language {
+    display: none;
+  }
+
+  .contact-stage {
+    padding: 20px;
+  }
+
+  .contact-email {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .contact-email > svg:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 389px) {
+  .site-container {
+    width: min(calc(100% - 18px), 360px);
+  }
+
+  .brand-name {
+    max-width: 168px;
+    font-size: 0.8rem;
+  }
+
+  .hero-header-copy h1 {
+    font-size: 2.75rem;
+  }
+
+  .hero-member {
+    min-height: 520px;
+    padding-inline: 14px;
+  }
+
+  .hero-member-visual {
+    min-height: 315px;
+  }
+
+  .hero-code-fragment,
+  .member-motif {
+    display: none;
+  }
+
+  .member-profile {
+    padding: 12px;
+  }
+
+  .member-profile-header h3 {
+    font-size: 2rem;
+  }
+
+  .member-portrait--detail,
+  .member-portrait--detail picture {
+    min-height: 285px;
+  }
+
+  .profile-introduction,
+  .profile-panel {
+    padding: 17px;
+  }
+
+  .profile-about {
+    overflow-wrap: anywhere;
+  }
+
+  .contact-email span,
+  .profile-contact-list strong,
+  .contact-display-only strong {
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+  }
+
+  .footer-brand {
+    font-size: 0.84rem;
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-glow {
+    display: none;
+  }
+}
